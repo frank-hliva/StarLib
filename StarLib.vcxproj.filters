@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\App">
+      <UniqueIdentifier>{99bd8227-6c45-4038-8967-8133675ef70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\App">
+      <UniqueIdentifier>{09e81b80-51c6-4579-abb0-053a33a1ce2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Errors">
+      <UniqueIdentifier>{b09fe0eb-f858-4adb-be8f-aa31f29a49ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Errors">
+      <UniqueIdentifier>{0a272a3e-0b83-4cc4-853f-77bef6bd153c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\IO">
+      <UniqueIdentifier>{5e9e7310-b97e-46c6-8ed8-494d2dd287d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IO">
+      <UniqueIdentifier>{b7e21fa7-2d6b-4a6c-aa43-eb8f7afb222c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Types">
+      <UniqueIdentifier>{1f0ba72c-9737-492b-a142-442214f9f4ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Types">
+      <UniqueIdentifier>{3a106beb-c06b-4209-879c-1ccc4c5938e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Time">
+      <UniqueIdentifier>{a559a151-2974-4897-95d3-ebb4e47cf789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Time">
+      <UniqueIdentifier>{bdbec74d-d225-4b64-a0cc-dec9f354a15e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Encoding">
+      <UniqueIdentifier>{de910965-c21e-404a-8017-9b6e7821d26e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Encoding">
+      <UniqueIdentifier>{9fca5601-650b-4a78-914c-5650ea6d2e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Text">
+      <UniqueIdentifier>{6aecf1dd-b3a7-4cf0-92f6-e82e1fe98201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Text">
+      <UniqueIdentifier>{c7f71dd8-2c22-43b3-b260-8d8a90972df7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hardware">
+      <UniqueIdentifier>{b617900b-be38-4a5d-81f0-06dbbc790c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Hardware">
+      <UniqueIdentifier>{2bcbff39-1103-4afd-838a-b4420a220a85}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Star\Map.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\App.cpp">
+      <Filter>Source Files\App</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\CreatePipeEx.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Path.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Binary.cpp">
+      <Filter>Source Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Map.cpp">
+      <Filter>Source Files\Types</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\App.h">
+      <Filter>Header Files\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Binary.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\CreatePipeEx.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Path.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\SystemError.h">
+      <Filter>Header Files\Errors</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Error.h">
+      <Filter>Header Files\Errors</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\DateTime.h">
+      <Filter>Header Files\Time</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\SystemError.cpp">
+      <Filter>Source Files\Errors</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Error.cpp">
+      <Filter>Source Files\Errors</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\DateTime.cpp">
+      <Filter>Source Files\Time</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\Log.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\File.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\Log.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\File.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\Star.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Directory.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\Directory.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\UTF8.h">
+      <Filter>Header Files\Encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\InputStreamIterable.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\UTF8.cpp">
+      <Filter>Source Files\Encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\InputStreamIterable.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Star.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\FilesystemAttributes.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Timestamp.h">
+      <Filter>Header Files\Time</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\FilesystemAttributes.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Timestamp.cpp">
+      <Filter>Source Files\Time</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\DaysOfWeek.h">
+      <Filter>Header Files\Time</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\DaysOfWeek.cpp">
+      <Filter>Source Files\Time</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\FileSystemEntry.h">
+      <Filter>Header Files\IO</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\FileSystemEntry.cpp">
+      <Filter>Source Files\IO</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\Text.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\Text.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\StringSequence.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\StringSequence.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\Reflect.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\Reflect.cpp">
+      <Filter>Source Files\Types</Filter>
+    </ClCompile>
+    <ClInclude Include="Star\StringDefs.h">
+      <Filter>Header Files\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Star\Serial.h">
+      <Filter>Header Files\Hardware</Filter>
+    </ClInclude>
+    <ClCompile Include="Star\StringDefs.cpp">
+      <Filter>Source Files\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Star\Serial.cpp">
+      <Filter>Source Files\Hardware</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

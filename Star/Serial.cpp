@@ -62,9 +62,19 @@ Serial::Serial(std::string port) :
 {
 }
 
+Serial::~Serial()
+{
+	Close();
+}
+
 DCB Serial::CommState() const
 {
 	return commState;
+}
+
+bool Serial::IsAvailable() const
+{
+	return isAvailable;
 }
 
 DWORD Serial::Write(const char* buffer, const DWORD size)
@@ -89,6 +99,16 @@ DWORD Serial::Read(char* buffer, const DWORD size) const
 	{
 		throw Errors::Error();
 	}
+}
+
+DWORD Serial::Print(const std::string string)
+{
+	return Write(string.c_str(), string.size());
+}
+
+DWORD Serial::PrintLine(const std::string string)
+{
+	return Print(string + '\n');
 }
 
 std::optional<char> Serial::Read() const
@@ -142,16 +162,6 @@ std::string Serial::ReadLine() const
 	return ReadLine(1024);
 }
 
-bool Serial::IsAvailable() const
-{
-	return isAvailable;
-}
-
-Serial::~Serial()
-{
-	Close();
-}
-
 void Serial::Close()
 {
 	if (this->isAvailable)
@@ -159,14 +169,4 @@ void Serial::Close()
 		this->isAvailable = false;
 		CloseHandle(this->portHandle);
 	}
-}
-
-DWORD Serial::Print(const std::string string)
-{
-	return Write(string.c_str(), string.size());
-}
-
-DWORD Serial::PrintLine(const std::string string)
-{
-	return Print(string + '\n');
 }

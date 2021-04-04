@@ -18,7 +18,9 @@ public:
 	Serial(std::string port, DCB options);
 	Serial(std::string port, DWORD baudRate);
 	Serial(std::string port);
+	~Serial();
 	DCB CommState() const;
+	bool IsAvailable() const;
 	DWORD Write(const char* buffer, const DWORD size);
 	DWORD Read(char* buffer, const DWORD size) const;
 	DWORD Print(const std::string string);
@@ -26,7 +28,5 @@ public:
 	std::optional<char> Read() const;
 	std::string ReadLine(const size_t bufferSize) const;
 	std::string ReadLine() const;
-	bool IsAvailable() const;
-	~Serial();
 	void Close();
 };

@@ -2,7 +2,7 @@
 
 Serial::Serial(std::string port, DCB options) : commState({0})
 {
-	auto prefix = "\\\\.\\";
+	constexpr auto prefix = "\\\\.\\";
 	auto portName = port.rfind(prefix, 0) == 0 ? port : (prefix + port);
 	this->portHandle = CreateFileA(static_cast<LPCSTR>(portName.c_str()),
 		GENERIC_READ | GENERIC_WRITE,
@@ -132,7 +132,7 @@ std::string Serial::ReadLine(const size_t bufferSize) const
 	DWORD readedBytes, length = 0;
 	auto line = std::string();
 	while (true) {
-		auto readedBytes = Read(pointer, static_cast<DWORD>(1));
+		auto readedBytes = Read(pointer, 1);
 		if (*pointer == '\r' || *pointer == '\n' || readedBytes == 0)
 		{
 			line.append(buffer, length);

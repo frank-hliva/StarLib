@@ -11,10 +11,14 @@ using namespace Star;
 class Serial
 {
 private:
+	DCB commState;
 	HANDLE portHandle;
 	bool isAvailable;
 public:
-	Serial(std::string port, DCB options = { 0 });
+	Serial(std::string port, DCB options);
+	Serial(std::string port, DWORD baudRate);
+	Serial(std::string port);
+	DCB CommState() const;
 	DWORD Write(const char* buffer, const DWORD size);
 	DWORD Read(char* buffer, const DWORD size) const;
 	DWORD Print(const std::string string);

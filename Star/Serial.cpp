@@ -1,6 +1,6 @@
 #include "Serial.h"
 
-Serial::Serial(std::string port, DCB options /*= { 0 }*/)
+Serial::Serial(std::string port, DCB options) : commState({0})
 {
 	auto prefix = "\\\\.\\";
 	auto portName = port.rfind(prefix, 0) == 0 ? port : (prefix + port);
@@ -15,15 +15,21 @@ Serial::Serial(std::string port, DCB options /*= { 0 }*/)
 	isAvailable = this->portHandle != INVALID_HANDLE_VALUE;
 	if (isAvailable)
 	{
-		if (GetCommState(portHandle, &options))
+		DCB commState = {0};
+		if (GetCommState(portHandle, &commState))
 		{
-			if (SetCommState(portHandle, &options))
+			if (options.ByteSize == 0) {
+				options.ByteSize = 8;
+			}
+			commState = options;
+			if (SetCommState(portHandle, &commState))
 			{
 				isAvailable = true;
 				PurgeComm(portHandle, PURGE_RXCLEAR | PURGE_TXCLEAR);
 			}
 			else
 			{
+				console.Log(Errors::SystemError::LastError());
 				throw Errors::Error();
 			}
 		}
@@ -37,6 +43,28 @@ Serial::Serial(std::string port, DCB options /*= { 0 }*/)
 	{
 		throw Errors::Error();
 	}
+}
+
+Serial::Serial(std::string port, DWORD baudRate) :
+	Serial(port, {
+		.BaudRate = baudRate,
+		.fDtrControl = DTR_CONTROL_ENABLE,
+		.fRtsControl = RTS_CONTROL_DISABLE,
+		.ByteSize = 8,
+		.Parity = NOPARITY,
+		.StopBits = ONESTOPBIT
+	})
+{
+}
+
+Serial::Serial(std::string port) :
+	Serial(port, CBR_9600)
+{
+}
+
+DCB Serial::CommState() const
+{
+	return commState;
 }
 
 DWORD Serial::Write(const char* buffer, const DWORD size)

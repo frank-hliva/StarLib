@@ -17,8 +17,8 @@ namespace Star
 		isAvailable = this->portHandle != INVALID_HANDLE_VALUE;
 		if (isAvailable)
 		{
-			DCB commState = { 0 };
-			if (GetCommState(portHandle, &commState))
+			DCB currentCommState = { 0 };
+			if (GetCommState(portHandle, &currentCommState))
 			{
 				if (options.ByteSize == 0) {
 					options.ByteSize = 8;
@@ -48,14 +48,15 @@ namespace Star
 	}
 
 	Serial::Serial(std::string port, DWORD baudRate) :
-		Serial(port, {
+		Serial(port,
+		{
 			.BaudRate = baudRate,
 			.fDtrControl = DTR_CONTROL_ENABLE,
 			.fRtsControl = RTS_CONTROL_DISABLE,
 			.ByteSize = 8,
 			.Parity = NOPARITY,
 			.StopBits = ONESTOPBIT
-			})
+		})
 	{
 	}
 
@@ -82,7 +83,8 @@ namespace Star
 	DWORD Serial::Write(const char* buffer, const DWORD size)
 	{
 		DWORD writtenBytes;
-		if (WriteFile(portHandle, buffer, size, &writtenBytes, nullptr)) {
+		if (WriteFile(portHandle, buffer, size, &writtenBytes, nullptr))
+		{
 			return writtenBytes;
 		}
 		else
@@ -94,7 +96,8 @@ namespace Star
 	DWORD Serial::Read(char* buffer, const DWORD size) const
 	{
 		DWORD readedBytes;
-		if (ReadFile(portHandle, buffer, size, &readedBytes, nullptr)) {
+		if (ReadFile(portHandle, buffer, size, &readedBytes, nullptr))
+		{
 			return readedBytes;
 		}
 		else

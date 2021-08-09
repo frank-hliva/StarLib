@@ -96,9 +96,9 @@ namespace Star::IO
 		)
 		{
 			auto stream = std::basic_fstream<CharType>(path, mode, port);
-			INIT_EXCEPTIONS(stream)
 			stream.close();
 			stream.open(path, std::ios_base::in | std::ios_base::out);
+			INIT_EXCEPTIONS(stream)
 			return stream;
 		}
 

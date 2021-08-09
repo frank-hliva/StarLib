@@ -1,5 +1,7 @@
 #include "Star.h"
+#ifdef _WIN32
 #include <windows.h>
+#endif
 #include "StringSequence.h"
 
 namespace Star

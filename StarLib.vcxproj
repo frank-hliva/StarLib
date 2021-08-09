@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DevTools.h" />
     <ClInclude Include="Star\Serial.h" />
     <ClInclude Include="Star\Reflect.h" />
     <ClInclude Include="Star\FileSystemEntry.h" />

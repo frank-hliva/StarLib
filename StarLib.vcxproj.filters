@@ -61,6 +61,12 @@
     <Filter Include="Header Files\Hardware">
       <UniqueIdentifier>{2bcbff39-1103-4afd-838a-b4420a220a85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DevTools">
+      <UniqueIdentifier>{aa9e2646-c7c9-492b-952a-a1960e772b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DevTools">
+      <UniqueIdentifier>{157e20d5-a555-4d99-9172-3fcf5bac1ed4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Star\Map.h">
@@ -201,5 +207,8 @@
     <ClCompile Include="Star\Serial.cpp">
       <Filter>Source Files\Hardware</Filter>
     </ClCompile>
+    <ClInclude Include="DevTools.h">
+      <Filter>Header Files\DevTools</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

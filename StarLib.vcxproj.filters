@@ -207,7 +207,7 @@
     <ClCompile Include="Star\Serial.cpp">
       <Filter>Source Files\Hardware</Filter>
     </ClCompile>
-    <ClInclude Include="DevTools.h">
+    <ClInclude Include="Star\DevTools.h">
       <Filter>Header Files\DevTools</Filter>
     </ClInclude>
   </ItemGroup>
